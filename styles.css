@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #73c2fb, #3f8efc);
+  }
+  
+  .container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 20px auto;
+    z-index: 2;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .cell:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .cell[data-cell="X"] {
+    color: #1976D2;
+  }
+  
+  .cell[data-cell="O"] {
+    color: #E53935;
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .celebration {
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slide-up 2s ease-in-out forwards;
+    z-index: 1;
+  }
+  
+  .emoji {
+    font-size: 2em;
+    margin: 0 10px;
+    opacity: 0;
+    animation: bounce 0.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes slide-up {
+    to {
+      bottom: 20px;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
